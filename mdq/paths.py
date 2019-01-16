@@ -5,6 +5,7 @@
 @author: R. Patrick Xian
 """
 
+from . import utils as u
 import numpy as np
 import itertools as it
 
@@ -22,7 +23,7 @@ def boustrouphedon(nrow, ncol, rowstart=0, rowstep=1, colstart=0, colstep=1, zzd
     colinds = np.arange(colstart, colend, dtype=dtyp)
     
     for r, rrem in zip(rowinds, rowrem): 
-        zzinds.append(list(zip(it.repeat(r), altrange(colstart, colend, colstep, rrem))))
+        zzinds.append(list(zip(it.repeat(r), u.altrange(colstart, colend, colstep, rrem))))
     
     zzinds = np.moveaxis(np.asarray(zzinds, dtype=dtyp), 2, 0)
     
