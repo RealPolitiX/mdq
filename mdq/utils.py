@@ -5,7 +5,8 @@
 @author: R. Patrick Xian
 """
 
-#import numpy as np
+import numpy as np
+
 
 def altrange(start, stop, step, flag):
     """ Reversible range operator.
